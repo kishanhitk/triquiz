@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>TriQuiz</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -19,7 +19,7 @@ export default function Home() {
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 mb-6 sm:w-full">
           <CardWithText title="Angle of Triangle?" href="/angle" />
-          <CardWithText title="Check Hypotenuse?" href="/angle" />
+          <CardWithText title="Check Hypotenuse?" href="/hypotenuse" />
           <CardWithText title="Calculate Area?" href="/angle" />
           <CardWithText title="Play a quiz?" href="/angle" />
         </div>
@@ -32,8 +32,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+          Built by Kishan
         </a>
       </footer>
     </div>

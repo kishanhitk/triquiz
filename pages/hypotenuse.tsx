@@ -2,24 +2,20 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { FormEvent } from "react";
 
-const AnglePage = () => {
-  const [a, setA] = React.useState(null);
-  const [b, setB] = React.useState(null);
-  const [c, setC] = React.useState(null);
+const HypotenusePage = () => {
   const [output, setOutput] = React.useState("Output");
+  const [base, setBase] = React.useState(null);
+  const [height, setHeight] = React.useState(null);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (a + b + c === 180) {
-      setOutput("Yes, triangle is possible");
-    } else {
-      setOutput("No, triangle is impossible");
-    }
+    const hypotenuse = Math.sqrt(base * base + height * height).toPrecision(2);
+    setOutput("The hypotenuse is " + hypotenuse);
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Angle Checker | TriQuiz</title>
+        <title>Hypotenuse</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
@@ -32,40 +28,29 @@ const AnglePage = () => {
             <Link href="/">Go Back</Link>
           </div>
           <p className="text-2xl font-bold ">
-            Enter the angles in below input boxes and we will tell you if those
-            angles make a Triangle
+            Enter the height and base of a right triangle and find the
+            hypotenuse.
           </p>
           <form onSubmit={handleSubmit}>
             <input
               className="my-5 focus:ring-indigo-500 focus:border-indigo-500 block w-full   sm:text-sm border-purple-900 bg-purple-200 p-5 rounded-md"
               type="number"
               min="0"
-              max="180"
               name="a"
-              placeholder="angle A"
-              value={a}
-              onChange={(e) => setA(Number(e.target.value))}
+              placeholder="Base"
+              value={base}
+              onChange={(e) => setBase(Number(e.target.value))}
             />
             <input
               className="my-5 focus:ring-indigo-500 focus:border-indigo-500 block w-full   sm:text-sm border-purple-900 bg-purple-200 p-5 rounded-md"
               type="number"
               name="a"
               min="0"
-              max="180"
-              placeholder="angle B"
-              value={b}
-              onChange={(e) => setB(Number(e.target.value))}
+              placeholder="Height"
+              value={height}
+              onChange={(e) => setHeight(Number(e.target.value))}
             />
-            <input
-              className="my-5 focus:ring-indigo-500 focus:border-indigo-500 block w-full   sm:text-sm border-purple-900 bg-purple-200 p-5 rounded-md"
-              type="number"
-              name="a"
-              min="0"
-              max="180"
-              placeholder="angle C"
-              value={c}
-              onChange={(e) => setC(Number(e.target.value))}
-            />
+
             <br />
             <button
               className="bg-blue-700 px-5 py-2 shadow-md hover:shadow-sm hover:bg-blue-600 rounded-lg text-white"
@@ -73,7 +58,9 @@ const AnglePage = () => {
             >
               Submit
             </button>
-            <div className="mt-4 text-blue-700 text-lg">{output}</div>
+            <div className="mt-4 text-blue-700 text-lg bg-blue-100 py-2  rounded-md">
+              {output}
+            </div>
           </form>
         </div>
       </main>
@@ -91,4 +78,4 @@ const AnglePage = () => {
   );
 };
 
-export default AnglePage;
+export default HypotenusePage;
