@@ -6,7 +6,6 @@ const AreaPage = () => {
   const [output, setOutput] = React.useState("Output");
   const [base, setBase] = React.useState(null);
   const [height, setHeight] = React.useState(null);
-  const [gender, setGender] = useState(null);
   const [type, setType] = useState(1);
   const [a, setA] = useState(null);
   const [b, setB] = useState(null);

@@ -21,7 +21,7 @@ export default function Home() {
           <CardWithText title="Angle of Triangle?" href="/angle" />
           <CardWithText title="Check Hypotenuse?" href="/hypotenuse" />
           <CardWithText title="Calculate Area?" href="/area" />
-          <CardWithText title="Play a quiz?" href="/angle" />
+          <CardWithText title="Play a quiz?" href="/quiz" />
         </div>
       </main>
 
