@@ -19,7 +19,7 @@ export default function Home() {
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 mb-6 sm:w-full">
           <CardWithText title="Angle of Triangle?" href="/angle" />
-          <CardWithText title="Check Hypotenuse?" href="/hypotenuse" />
+          <CardWithText title="Calculate Hypotenuse?" href="/hypotenuse" />
           <CardWithText title="Calculate Area?" href="/area" />
           <CardWithText title="Play a quiz?" href="/quiz" />
         </div>
